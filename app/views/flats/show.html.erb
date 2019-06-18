@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);"></div>
+
+<div class="container">
+
+  <div class="card-header">
+    <h2>
+      <strong><%= @flat.name %></strong>
+    </h2>
+
+    <p>
+      <%= @flat.address %>
+    </p>
+  </div>
+
+  <div class="card-body">
+    <h3><strong>A bit more about this flat...</strong></h3>
+    <p>
+      <%= @flat.description %>
+    </p>
+  </div>
+
+  <p>
+    <strong>Price per night:</strong>
+    <%= @flat.price_per_night %>
+  </p>
+
+  <p>
+    <strong>Number of guests:</strong>
+    <%= @flat.number_of_guests %>
+  </p>
+
+  <%= link_to 'Edit', edit_flat_path(@flat) %> |
+  <%= link_to 'Back', flats_path %>
+
+</div>

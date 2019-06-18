@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+<h1>All our Flats</h1>
+
+  <div class="d-flex justify-content-around align-content-center">
+    <% @flats.each do |flat| %>
+      <div class="card" style="width: 18rem">
+        <img src="https://source.unsplash.com/random" class="card-img-top" style="height: 200px" alt="" >
+        <div class="card-info p-3">
+          <h3><%= flat.name %></h3>
+          <p><%= flat.address %></p>
+          <div class="card-number d-flex">
+            <p>€<%= flat.price_per_night %></p>
+            <p style="margin-left: 15px">👥<%= flat.number_of_guests%></p>
+          </div>
+        </div>
+        <div class="card-bottom d-flex justify-content-around">
+          <p><%= link_to 'More info', flat, class: "text-primary"%></p>
+          <p><%= link_to 'Edit', edit_flat_path(flat), class: "text-warning"%></p>
+          <p><%= link_to 'Remove', flat, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
